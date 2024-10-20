@@ -1,0 +1,12 @@
+{"task": "value", "number_rows": 30, "field": [{"name": "n", "type": "string", "entropy": "high", "unique": 10}, {"name": "q1", "type": "number", "entropy": "high", "unique": 30, "interesting": "true"}, {"name": "q2", "type": "number", "entropy": "low", "unique": 30}], "view": [{"coordinates": "cartesian", "mark": [{"type": "point", "encoding": [{"channel": "x", "field": "q1"}, {"channel": "y", "field": "q2"}, {"channel": "color", "field": "n"}]}], "scale": [{"channel": "x", "type": "linear", "zero": "true"}, {"channel": "y", "type": "linear", "zero": "true"}, {"channel": "color", "type": "categorical"}]}]}
+{'task': 'value', 'number_rows': 30, 'field': [{'name': 'n', 'type': 'string', 'entropy': 1000, 'unique': 10}, {'name': 'q1', 'type': 'number', 'entropy': 3914, 'unique': 30, 'interesting': 'true'}, {'name': 'q2', 'type': 'number', 'entropy': 1613, 'unique': 30}], 'view': [{'coordinates': 'cartesian', 'mark': [{'type': 'point', 'encoding': [{'channel': 'x', 'field': 'q1'}, {'channel': 'size', 'field': 'q2'}, {'channel': 'y', 'field': 'n'}]}], 'scale': [{'channel': 'x', 'type': 'linear', 'zero': 'true'}, {'channel': 'size', 'type': 'linear', 'zero': 'true'}, {'channel': 'y', 'type': 'ordinal'}]}]}
+
+c_c_point            1
+c_d_overlap_point   -1
+categorical_color    1
+categorical_scale    1
+linear_size         -1
+linear_y             1
+ordinal_scale       -1
+ordinal_y           -1
+

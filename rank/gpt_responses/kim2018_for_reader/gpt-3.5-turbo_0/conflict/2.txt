@@ -1,0 +1,20 @@
+Chart 1: {"task": "summary", "number_rows": 30, "field": [{"name": "n", "type": "string", "entropy": 1000, "unique": 10, "interesting": "true"}, {"name": "q1", "type": "number", "entropy": 3843, "unique": 30, "interesting": "true"}, {"name": "q2", "type": "number", "entropy": 3912, "unique": 30}], "view": [{"coordinates": "cartesian", "mark": [{"type": "point", "encoding": [{"channel": "size", "field": "q1"}, {"channel": "x", "field": "q2"}, {"channel": "y", "field": "n"}]}], "scale": [{"channel": "size", "type": "linear", "zero": "true"}, {"channel": "x", "type": "linear", "zero": "true"}, {"channel": "y", "type": "ordinal"}]}]}
+
+Chart 2: {"task": "summary", "number_rows": 30, "field": [{"name": "n", "type": "string", "entropy": 1000, "unique": 10, "interesting": "true"}, {"name": "q1", "type": "number", "entropy": 3843, "unique": 30, "interesting": "true"}, {"name": "q2", "type": "number", "entropy": 3912, "unique": 30}], "view": [{"coordinates": "cartesian", "mark": [{"type": "point", "encoding": [{"channel": "color", "field": "q1"}, {"channel": "y", "field": "q2"}, {"channel": "x", "field": "n"}]}], "scale": [{"channel": "color", "type": "linear", "zero": "true"}, {"channel": "y", "type": "linear", "zero": "true"}, {"channel": "x", "type": "ordinal"}]}]}
+
+color_entropy_high         -1
+interesting_color          -1
+interesting_size            1
+interesting_x              -1
+interesting_y               1
+linear_color               -1
+linear_size                 1
+linear_x                    1
+linear_y                   -1
+ordinal_x                  -1
+ordinal_y                   1
+size_entropy_high           1
+summary_continuous_color   -1
+summary_continuous_size     1
+summary_discrete_x         -1
+summary_discrete_y          1

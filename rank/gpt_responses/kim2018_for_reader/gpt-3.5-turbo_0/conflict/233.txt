@@ -1,0 +1,20 @@
+Chart 1: {"task": "value", "number_rows": 300, "field": [{"name": "n", "type": "string", "entropy": 1000, "unique": 10}, {"name": "q1", "type": "number", "entropy": 3816, "unique": 300, "interesting": "true"}, {"name": "q2", "type": "number", "entropy": 982, "unique": 300}], "view": [{"coordinates": "cartesian", "mark": [{"type": "point", "encoding": [{"channel": "y", "field": "q1"}, {"channel": "x", "field": "q2"}]}], "scale": [{"channel": "y", "type": "linear", "zero": "true"}, {"channel": "x", "type": "linear", "zero": "true"}], "facet": [{"channel": "row", "field": "n"}]}]}
+
+Chart 2: {"task": "value", "number_rows": 300, "field": [{"name": "n", "type": "string", "entropy": 1000, "unique": 10}, {"name": "q1", "type": "number", "entropy": 3816, "unique": 300, "interesting": "true"}, {"name": "q2", "type": "number", "entropy": 982, "unique": 300}], "view": [{"coordinates": "cartesian", "mark": [{"type": "point", "encoding": [{"channel": "size", "field": "q1"}, {"channel": "x", "field": "q2"}, {"channel": "y", "field": "n"}]}], "scale": [{"channel": "size", "type": "linear", "zero": "true"}, {"channel": "x", "type": "linear", "zero": "true"}, {"channel": "y", "type": "ordinal"}]}]}
+
+c_c_point                1
+c_d_overlap_point       -1
+encoding                -1
+encoding_field          -1
+high_cardinality_size   -1
+interesting_size        -1
+interesting_y            1
+linear_size             -1
+linear_y                 1
+ordinal_scale           -1
+ordinal_y               -1
+size_entropy_high       -1
+value_continuous_size   -1
+value_continuous_y       1
+x_row                    1
+y_row                    1

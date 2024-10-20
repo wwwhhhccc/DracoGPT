@@ -1,0 +1,14 @@
+Chart 1: {"task": "summary", "number_rows": 300, "field": [{"name": "n", "type": "string", "entropy": "high", "unique": 10, "interesting": "true"}, {"name": "q1", "type": "number", "entropy": "high", "unique": 300, "interesting": "true"}, {"name": "q2", "type": "number", "entropy": "high", "unique": 300}], "view": [{"coordinates": "cartesian", "mark": [{"type": "point", "encoding": [{"channel": "x", "field": "q1"}, {"channel": "y", "field": "q2"}, {"channel": "color", "field": "n"}]}], "scale": [{"channel": "x", "type": "linear", "zero": "true"}, {"channel": "y", "type": "linear", "zero": "true"}, {"channel": "color", "type": "categorical"}]}]}
+
+Chart 2: {"task": "summary", "number_rows": 300, "field": [{"name": "n", "type": "string", "entropy": "high", "unique": 10, "interesting": "true"}, {"name": "q1", "type": "number", "entropy": "high", "unique": 300, "interesting": "true"}, {"name": "q2", "type": "number", "entropy": "high", "unique": 300}], "view": [{"coordinates": "cartesian", "mark": [{"type": "point", "encoding": [{"channel": "x", "field": "q1"}, {"channel": "y", "field": "q2"}]}], "scale": [{"channel": "x", "type": "linear", "zero": "true"}, {"channel": "y", "type": "linear", "zero": "true"}], "facet": [{"channel": "row", "field": "n"}]}]}
+
+categorical_color         1
+categorical_scale         1
+encoding                  1
+encoding_field            1
+interesting_color         1
+interesting_row          -1
+summary_discrete_color    1
+summary_facet            -1
+x_row                    -1
+y_row                    -1

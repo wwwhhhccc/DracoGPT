@@ -1,0 +1,21 @@
+role: system
+content: Your goal is to suggest effective visualization designs that help people read charts quickly and accurately. You rely upon visualization design best practices and graphical perception research to make your recommendations.
+----------------------------------------
+role: user
+content: Suppose we ask participants in an experiment to look at two visualizations of the same dataset, where each visualization is represented as a set of facts in a dictionary format. The dictionary contains summary statistics about the data represented and the design of the visualization. Participants are asked to perform a summary task, which entails identifying or comparing aggregate properties of individual visual marks. The following two visualizations each depict three variables, one categorical (n) and two quantitative (q1 and q2). Examples of a summary task include finding the category in n that contains the maximum value of q1 and comparing the averages of q1 of two categories in n. Here are the two visualizations:
+
+Chart 1: {"task": "summary", "number_rows": 300, "field": [{"name": "n", "type": "string", "entropy": 1000, "unique": 10, "interesting": "true"}, {"name": "q1", "type": "number", "entropy": 3816, "unique": 300, "interesting": "true"}, {"name": "q2", "type": "number", "entropy": 982, "unique": 300}], "view": [{"coordinates": "cartesian", "mark": [{"type": "point", "encoding": [{"channel": "color", "field": "q1"}, {"channel": "x", "field": "q2"}, {"channel": "y", "field": "n"}]}], "scale": [{"channel": "color", "type": "linear", "zero": "true"}, {"channel": "x", "type": "linear", "zero": "true"}, {"channel": "y", "type": "ordinal"}]}]}
+
+Chart 2: {"task": "summary", "number_rows": 300, "field": [{"name": "n", "type": "string", "entropy": 1000, "unique": 10, "interesting": "true"}, {"name": "q1", "type": "number", "entropy": 3816, "unique": 300, "interesting": "true"}, {"name": "q2", "type": "number", "entropy": 982, "unique": 300}], "view": [{"coordinates": "cartesian", "mark": [{"type": "point", "encoding": [{"channel": "y", "field": "q1"}, {"channel": "x", "field": "q2"}, {"channel": "color", "field": "n"}]}], "scale": [{"channel": "y", "type": "linear", "zero": "true"}, {"channel": "x", "type": "linear", "zero": "true"}, {"channel": "color", "type": "categorical"}]}]}
+
+Which chart would help people answer more quickly or accurately on a summary task? Why? Structure your response in JSON format with three keys: "chart", "reason", and "confidence". For "chart", specify either "chart 1" or "chart 2"; for "reason", provide a one-sentence explanation of your decision; for "confidence", provide your confidence level on your response on a scale of 1 to 5, 1 being not at all confident and 5 being completely confident.
+----------------------------------------
+role: assistant
+content: ```json
+{
+  "chart": "chart 2",
+  "reason": "Chart 2 uses color to represent the categorical variable, which is more intuitive for comparing categories, while the quantitative variables are mapped to the axes, simplifying comparison of their values.",
+  "confidence": 4
+}
+```
+----------------------------------------

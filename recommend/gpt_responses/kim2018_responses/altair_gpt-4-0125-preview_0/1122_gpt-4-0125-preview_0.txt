@@ -1,0 +1,30 @@
+role: system
+content: You are presented with a partial specification for a visualization. Your task is to complete this design in an optimal manner so that people can read the visualization quickly and accurately. You rely upon visualization design best practices and principles from graphical perception research to make your recommendation. Ensure that your completion fully respects the provided partial specification.
+----------------------------------------
+role: user
+content: Below is the partial specification of a visualization. This dictionary specification contains summary statistics about the three variables to be visualized (q1, q2, and n) and some information about the design of the visualization. q1 and q2 are quantitative variables and n is a categorical variable. 
+
+Your task is to complete the design of this visualization. The full design should best support readers to perform a value task involving q1. In a value task, readers need to read or compare individual visual marks. In our case, examples of a value task involving q1 include retrieving the value for q1 of a clearly labeled data point and comparing the values for q1 of two clearly labeled data points.
+
+In the summary statistics, "task" specifies the task type the chart should best support, "number_rows" specifies the number of rows in the dataset, "name" specifies the variable name, "type" specifies the variable type, "entropy" specifies whether the univariate entropy of the variable is high or low, "unique" specifies the number of unique values for a variable, and "interesting" specifies whether a variable is involved in the task the visualization should support.
+
+You should suggest a completion of the design of this visualization in python using the visualization library altair that meets the following requirements:
+(1) The full design must FULLY respect the partial specification, including, but not limited to, the coordinate system, mark type, encoding channels, and scales, whenever they are provided;
+(2) The full design must use EXACTLY THREE encoding channels, ONE EACH for q1, q2, and n;
+(3) EVERY encoding channel you see in the partial specification, either in "encoding", "scale", or "facet", must be used in your recommendation to encode one variable;
+(4) The full design must not perform data aggregation--it should render the individual data points in a way that makes it easy for readers to mentally perform the value task.
+
+Here is the partial specification: 
+
+{"task": "value", "number_rows": 90, "field": [{"name": "n", "type": "string", "entropy": "high", "unique": 3}, {"name": "q1", "type": "number", "entropy": "low", "unique": 90, "interesting": "true"}, {"name": "q2", "type": "number", "entropy": "low", "unique": 90}], "view": {"coordinates": "cartesian", "mark": [{"type": "point"}], "scale": [{"channel": "x", "type": "linear", "zero": "true"}]}}
+
+Your response must exactly be a single JSON object with two keys: "chart" and "reason". For "chart", provide the completion in python using the visualization library altair. You must omit the import statement and the data field in alt.Chart(). For "reason", provide a one-sentence rationale for why you think this is the best completion. It is paramount that all the requirements above are strictly met.
+----------------------------------------
+role: assistant
+content: ```json
+{
+  "chart": "alt.Chart().mark_point().encode(x=alt.X('q1:Q', scale=alt.Scale(zero=True)), y='q2:Q', color='n:N')",
+  "reason": "This design uses a point mark with linear scales on both axes and color encoding for the categorical variable, allowing for easy comparison and value retrieval for q1 without aggregation."
+}
+```
+----------------------------------------

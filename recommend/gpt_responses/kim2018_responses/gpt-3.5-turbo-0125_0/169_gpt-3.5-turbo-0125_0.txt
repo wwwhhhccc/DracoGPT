@@ -1,0 +1,37 @@
+role: system
+content: You are presented with a partial specification of a visualization. Your task is to complete the design in an optimal manner so that people can read the visualization quickly and accurately. You rely upon visualization design best practices and principles from graphical perception research to make your recommendation.
+----------------------------------------
+role: user
+content: Below is the partial specification of a visualization. This dictionary specification contains summary statistics about the three variables to be visualized (q1, q2, and n) and some information about the design of the visualization. q1 and q2 are quantitative variables and n is a categorical variable. 
+
+Your task is to complete the design of this visualization. The full design should best support readers to perform a summary task involving q1 and n. In a summary task, readers need to identify or compare aggregate properties of individual visual marks. In our case, examples of a summary task involving q1 and n include finding the category in n that contains the maximum value of q1 and comparing the averages of q1 of two categories in n.
+
+In the summary statistics, "task" specifies the task type the chart should best support, "number_rows" specifies the number of rows in the dataset, "name" specifies the variable name, "type" specifies the variable type, "entropy" specifies whether the univariate entropy of the variable is high or low, "unique" specifies the number of unique values for a variable, and "interesting" specifies whether a variable is involved in the task the visualization should support.
+
+You should suggest a completion of the design of this visualization in Vega-Lite that meets the following requirements:
+(1) The full design must FULLY respect the partial specification, including, but not limited to, the coordinate system, mark type, encoding channels, and scales, whenever they are provided;
+(2) The full design must use EXACTLY THREE encoding channels, ONE EACH for q1, q2, and n;
+(3) EVERY encoding channel you see in the partial specification, either in "encoding", "scale", or "facet", must be used in your recommendation to encode one variable;
+(4) The full design must not perform data aggregation--it should render the individual data points in a way that makes it easy for readers to mentally perform the summary task.
+
+Here is the partial specification: 
+
+{"task": "summary", "number_rows": 300, "field": [{"name": "n", "type": "string", "entropy": "high", "unique": 10, "interesting": "true"}, {"name": "q1", "type": "number", "entropy": "high", "unique": 300, "interesting": "true"}, {"name": "q2", "type": "number", "entropy": "high", "unique": 300}], "view": {"coordinates": "cartesian", "mark": [{"type": "point"}], "scale": [{"channel": "y", "type": "linear", "zero": "true"}]}}
+
+Your response must exactly be a single JSON object with two keys: "chart" and "reason". For "chart", provide the completion in Vega-Lite. You may omit the data field.  For "reason", provide a one-sentence rationale for why you think this is the best completion. It is paramount that all the requirements above are strictly met.
+----------------------------------------
+role: assistant
+content: {
+    "chart": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "mark": {"type": "point"},
+        "encoding": {
+            "x": {"field": "q1", "type": "quantitative"},
+            "y": {"field": "q2", "type": "quantitative"},
+            "color": {"field": "n", "type": "nominal"}
+        },
+        "scale": {"y": {"type": "linear", "zero": true}}
+    },
+    "reason": "Using a scatter plot with q1 and q2 on the axes and color encoding for the categorical variable n allows for easy comparison of individual data points without aggregation."
+}
+----------------------------------------

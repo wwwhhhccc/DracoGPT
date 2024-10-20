@@ -1,0 +1,6 @@
+{"task": "summary", "number_rows": 60, "field": [{"name": "n", "type": "string", "entropy": "high", "unique": 20, "interesting": "true"}, {"name": "q1", "type": "number", "entropy": "high", "unique": 60, "interesting": "true"}, {"name": "q2", "type": "number", "entropy": "high", "unique": 60}], "view": [{"coordinates": "cartesian", "mark": [{"type": "point", "encoding": [{"channel": "color", "field": "q2"}, {"channel": "x", "field": "q1"}, {"channel": "y", "field": "n"}]}], "scale": [{"channel": "color", "type": "linear", "zero": "true"}, {"channel": "x", "type": "linear", "zero": "true"}, {"channel": "y", "type": "ordinal"}]}]}
+{'task': 'summary', 'number_rows': 60, 'field': [{'name': 'n', 'type': 'string', 'entropy': 1000, 'unique': 20, 'interesting': 'true'}, {'name': 'q1', 'type': 'number', 'entropy': 3975, 'unique': 60, 'interesting': 'true'}, {'name': 'q2', 'type': 'number', 'entropy': 3964, 'unique': 60}], 'view': [{'coordinates': 'cartesian', 'mark': [{'type': 'point', 'encoding': [{'channel': 'x', 'field': 'q1'}, {'channel': 'size', 'field': 'q2'}, {'channel': 'y', 'field': 'n'}]}], 'scale': [{'channel': 'x', 'type': 'linear', 'zero': 'true'}, {'channel': 'size', 'type': 'linear', 'zero': 'true'}, {'channel': 'y', 'type': 'ordinal'}]}]}
+
+linear_color    1
+linear_size    -1
+

@@ -1,0 +1,1 @@
+Your response must exactly be a single JSON object with two keys: "chart" and "reason". For "chart", provide the completion in Vega-Lite. You may omit the data field.  For "reason", provide a one-sentence rationale for why you think this is the best completion. It is paramount that all the requirements above are strictly met.

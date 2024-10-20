@@ -1,0 +1,52 @@
+
+
+c_c_point                            -1
+c_d_overlap_point                     1
+categorical_color                    -1
+categorical_scale                    -1
+high_cardinality_categorical_grt10   -1
+high_cardinality_size                 1
+interesting_color                    -1
+interesting_x                         1
+linear_size                           1
+linear_y                             -1
+ordinal_scale                         1
+ordinal_y                             1
+summary_continuous_x                  1
+summary_continuous_y                 -1
+summary_discrete_color               -1
+summary_discrete_y                    1
+
+c_c_point                            -1
+c_d_overlap_point                     1
+categorical_color                    -1
+categorical_scale                    -1
+high_cardinality_categorical_grt10   -1
+high_cardinality_size                 1
+interesting_color                    -1
+interesting_x                         1
+linear_size                           1
+linear_y                             -1
+ordinal_scale                         1
+ordinal_y                             1
+summary_continuous_x                  1
+summary_continuous_y                 -1
+summary_discrete_color               -1
+summary_discrete_y                    1
+
+c_c_point                            -1
+c_d_overlap_point                     1
+categorical_color                    -1
+categorical_scale                    -1
+high_cardinality_categorical_grt10   -1
+high_cardinality_size                 1
+interesting_color                    -1
+interesting_x                         1
+linear_size                           1
+linear_y                             -1
+ordinal_scale                         1
+ordinal_y                             1
+summary_continuous_x                  1
+summary_continuous_y                 -1
+summary_discrete_color               -1
+summary_discrete_y                    1

@@ -1,0 +1,11 @@
+Chart 1: {"task": "value", "number_rows": 9, "field": [{"name": "n", "type": "string", "entropy": 1000, "unique": 3}, {"name": "q1", "type": "number", "entropy": 1619, "unique": 9, "interesting": "true"}, {"name": "q2", "type": "number", "entropy": 1745, "unique": 9}], "view": [{"coordinates": "cartesian", "mark": [{"type": "point", "encoding": [{"channel": "x", "field": "q1"}, {"channel": "color", "field": "q2"}, {"channel": "y", "field": "n"}]}], "scale": [{"channel": "x", "type": "linear", "zero": "true"}, {"channel": "color", "type": "linear", "zero": "true"}, {"channel": "y", "type": "ordinal"}]}]}
+
+Chart 2: {"task": "value", "number_rows": 9, "field": [{"name": "n", "type": "string", "entropy": 1000, "unique": 3}, {"name": "q1", "type": "number", "entropy": 1619, "unique": 9, "interesting": "true"}, {"name": "q2", "type": "number", "entropy": 1745, "unique": 9}], "view": [{"coordinates": "cartesian", "mark": [{"type": "point", "encoding": [{"channel": "size", "field": "q1"}, {"channel": "x", "field": "q2"}, {"channel": "y", "field": "n"}]}], "scale": [{"channel": "size", "type": "linear", "zero": "true"}, {"channel": "x", "type": "linear", "zero": "true"}, {"channel": "y", "type": "ordinal"}]}]}
+
+interesting_size        -1
+interesting_x            1
+linear_color             1
+linear_size             -1
+size_entropy_low        -1
+value_continuous_size   -1
+value_continuous_x       1

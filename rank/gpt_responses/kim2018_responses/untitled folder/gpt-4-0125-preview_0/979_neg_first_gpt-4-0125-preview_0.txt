@@ -1,0 +1,21 @@
+role: system
+content: Your goal is to suggest effective visualization designs that help people read charts quickly and accurately. You rely upon visualization design best practices and graphical perception research to make your recommendations.
+----------------------------------------
+role: user
+content: Suppose we ask participants in an experiment to look at two visualizations of the same dataset, where each visualization is represented as a set of facts in a dictionary format. The dictionary contains summary statistics about the data represented and the design of the visualization. Participants are asked to perform a value task, which entails reading or comparing individual visual marks. The following two visualizations each depict three variables, one categorical (n) and two quantitative (q1 and q2). Examples of a value task include retrieving the value for q1 of a clearly labeled data point and comparing the values for q1 of two clearly labeled data points. Here are the two visualizations:
+
+Chart 1: {"task": "value", "number_rows": 90, "field": [{"name": "n", "type": "string", "entropy": 1000, "unique": 3}, {"name": "q1", "type": "number", "entropy": 3925, "unique": 90, "interesting": "true"}, {"name": "q2", "type": "number", "entropy": 3956, "unique": 90}], "view": [{"coordinates": "cartesian", "mark": [{"type": "point", "encoding": [{"channel": "size", "field": "q1"}, {"channel": "x", "field": "q2"}, {"channel": "y", "field": "n"}]}], "scale": [{"channel": "size", "type": "linear", "zero": "true"}, {"channel": "x", "type": "linear", "zero": "true"}, {"channel": "y", "type": "ordinal"}]}]}
+
+Chart 2: {"task": "value", "number_rows": 90, "field": [{"name": "n", "type": "string", "entropy": 1000, "unique": 3}, {"name": "q1", "type": "number", "entropy": 3925, "unique": 90, "interesting": "true"}, {"name": "q2", "type": "number", "entropy": 3956, "unique": 90}], "view": [{"coordinates": "cartesian", "mark": [{"type": "point", "encoding": [{"channel": "y", "field": "q1"}, {"channel": "x", "field": "q2"}]}], "scale": [{"channel": "y", "type": "linear", "zero": "true"}, {"channel": "x", "type": "linear", "zero": "true"}], "facet": [{"channel": "row", "field": "n"}]}]}
+
+Which chart would help people answer more quickly or accurately on a value task? Why? Structure your response in JSON format with three keys: "chart", "reason", and "confidence". For "chart", specify either "chart 1" or "chart 2"; for "reason", provide a one-sentence explanation of your decision; for "confidence", provide your confidence level on your response on a scale of 1 to 5, 1 being not at all confident and 5 being completely confident.
+----------------------------------------
+role: assistant
+content: ```json
+{
+  "chart": "chart 2",
+  "reason": "Chart 2 uses faceting by the categorical variable 'n' and direct encoding of 'q1' and 'q2' on the x and y axes, which simplifies comparison and value retrieval tasks.",
+  "confidence": 4
+}
+```
+----------------------------------------
